@@ -2,22 +2,41 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class User {
-    constructor(firstname, lastname) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-    }
-}
+const list = [
+    {
+        title: 'React',
+        url: 'https://reactjs.org',
+        author: 'Jordan Walke',
+        num_comments: 3,
+        points: 4,
+        objectId: 0,
+    },
+    {
+        title: 'Redux',
+        url: 'https://github.com/reactjs/redux',
+        author: 'Dan Abramov, Andrew Clark',
+        num_comments: 2,
+        points: 5,
+        objectId: 1,
+    },
+];
 
 class App extends Component {
   render() {
-    const helloWorld = '리액트에 오신 여러분을 환영합니다.';
-    const user = new User("Park", "ChiHyun");
-
     return (
       <div className="App">
-        <h2>{helloWorld}</h2>
-        <h3>{user.firstname} {user.lastname}님</h3>
+        {list.map(function(item) {
+            return (
+                <div key={item.objectId}>
+                    <span>
+                        <a href={item.url}>{item.title}</a>
+                    </span>
+                    <span>{item.author}</span>
+                    <span>{item.num_comments}</span>
+                    <span>{item.points}</span>
+                </div>
+            );
+        })}
       </div>
     );
   }
