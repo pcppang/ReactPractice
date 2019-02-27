@@ -11,8 +11,8 @@ class User {
 
 class App extends Component {
   render() {
-    var helloWorld = '리액트에 오신 여러분을 환영합니다.';
-    let user = new User("Park", "ChiHyun");
+    const helloWorld = '리액트에 오신 여러분을 환영합니다.';
+    const user = new User("Park", "ChiHyun");
 
     return (
       <div className="App">
